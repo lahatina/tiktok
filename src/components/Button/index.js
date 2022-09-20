@@ -13,6 +13,8 @@ function Button({
     text = false,
     small = false,
     large = false,
+    lefticon,
+    righticon,
     className,
     children,
     onClick,
@@ -45,7 +47,9 @@ function Button({
 
     return (
         <Comp className={classes} {...props}>
-            <span>{children}</span>
+            {lefticon && <span className={cx('icon')}>{lefticon}</span>}
+            {righticon && <span className={cx('icon')}>{righticon}</span>}
+            <span className={cx('title')}>{children}</span>
         </Comp>
     );
 }
